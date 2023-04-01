@@ -46,7 +46,7 @@ public class Discord4Fabric implements ModInitializer {
                         .append(Text.literal("Ваш код: "))
                         .append(Text.literal(code)
                                 .formatted(Formatting.BLUE, Formatting.UNDERLINE))
-                        .append(Text.literal("\nДля привязки аккаунт отправьте код в ЛС боту"));
+                        .append(Text.literal("\nДля привязки аккаунта отправьте код в ЛС боту"));
 
         player.networkHandler.disconnect(reason);
     }
