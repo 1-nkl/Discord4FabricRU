@@ -42,11 +42,11 @@ public class Discord4Fabric implements ModInitializer {
         String code = ACCOUNT_LINKING.getCode(uuid);
 
         MutableText reason = Text.empty()
-                        .append(Text.literal("This server requires a linked Discord account!\n"))
-                        .append(Text.literal("Your linking code is "))
+                        .append(Text.literal("Вам нужно привязать аккаунт Discord!\n"))
+                        .append(Text.literal("Ваш код: "))
                         .append(Text.literal(code)
                                 .formatted(Formatting.BLUE, Formatting.UNDERLINE))
-                        .append(Text.literal("\nPlease DM the bot this linking code to link your account"));
+                        .append(Text.literal("\nДля привязки аккаунт отправьте код в ЛС боту"));
 
         player.networkHandler.disconnect(reason);
     }
@@ -62,7 +62,7 @@ public class Discord4Fabric implements ModInitializer {
                 ModCommands.init();
             }
         } catch (LoginException e) {
-            LOGGER.error("Login Failed! Please update your config and restart the server");
+            LOGGER.error("Вход в систему невозможен! Пожалуйста, обновите конфигурацию и перезапустите сервер");
         } catch (Exception e) {
             Utils.logException(e);
         }
@@ -74,11 +74,11 @@ public class Discord4Fabric implements ModInitializer {
             CONFIG.writeConfig(file);
             LOGGER.error(
                     String.format(
-                            "Config not found! Generated template at %s",
+                            "Конфигурация не найдена! Generated template at %s",
                             file.getAbsolutePath()
                     )
             );
-            LOGGER.error("Please update your config and restart the server");
+            LOGGER.error("Пожалуйста, обновите конфигурацию и перезапустите сервер");
             return false;
         }
 
