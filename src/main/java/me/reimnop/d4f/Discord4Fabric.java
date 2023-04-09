@@ -74,7 +74,7 @@ public class Discord4Fabric implements ModInitializer {
             CONFIG.writeConfig(file);
             LOGGER.error(
                     String.format(
-                            "Конфигурация не найдена! Шаблон сгенерирован на %s",
+                            "Файл конфигурации не найден! Новый файл сгенерирован по пути: %s",
                             file.getAbsolutePath()
                     )
             );
@@ -124,7 +124,7 @@ public class Discord4Fabric implements ModInitializer {
                         fileWriter.write("{}");
                     }
                 }
-                LOGGER.warn("Не найден файл события! Шаблон сгенерирован");
+                LOGGER.warn("Не найден файл событий! Новый файл сгенерирован");
             }
         } catch (IOException e) {
             Utils.logException(e);
