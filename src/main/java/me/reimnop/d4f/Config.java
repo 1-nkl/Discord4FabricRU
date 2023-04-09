@@ -18,7 +18,7 @@ public class Config {
     public Long consoleChannelId = 0L;
     public Boolean announceServerStartStop = true;
     public String serverStartMessage = ":white_check_mark: **Сервер запущен!**";
-    public String serverStopMessage = ":negative_squared_cross_mark: **Сервер остановлен!**";
+    public String serverStopMessage = ":octagonal_sign: **Сервер остановлен!**";
     public Boolean announcePlayerJoinLeave = true;
     public String playerJoinMessage = "%player:name% присоединился";
     public String playerJoinDescription = "Добро пожаловать на сервер :wave:";
@@ -30,7 +30,7 @@ public class Config {
     public Boolean announceAdvancement = true;
     public String advancementGoalTitle = "%player:name% достиг цели [%d4f:title%]";
     public String advancementGoalDescription = "%d4f:description%";
-    public String advancementTaskTitle = "%player:name% has made the advancement [%d4f:title%]";
+    public String advancementTaskTitle = "%player:name% выполнил достижение [%d4f:title%]";
     public String advancementTaskDescription = "%d4f:description%";
     public String advancementChallengeTitle = "%player:name% прошёл испытание [%d4f:title%]";
     public String advancementChallengeDescription = "%d4f:description%";
