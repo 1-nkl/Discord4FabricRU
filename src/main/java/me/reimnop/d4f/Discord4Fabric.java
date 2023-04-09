@@ -42,11 +42,11 @@ public class Discord4Fabric implements ModInitializer {
         String code = ACCOUNT_LINKING.getCode(uuid);
 
         MutableText reason = Text.empty()
-                        .append(Text.literal("Вам нужно привязать аккаунт Discord!\n"))
-                        .append(Text.literal("Ваш код: "))
+                        .append(Text.literal("Чтобы зайти на сервер, вам нужно привязать аккаунт Discord к аккаунту Minecraft!\n"))
+                        .append(Text.literal("Ваш код привязки: "))
                         .append(Text.literal(code)
-                                .formatted(Formatting.BLUE, Formatting.UNDERLINE))
-                        .append(Text.literal("\nДля привязки аккаунта отправьте код в ЛС боту"));
+                                .formatted(Formatting.RED, Formatting.UNDERLINE))
+                        .append(Text.literal("\nДля привязки аккаунта Discord к аккаунту Minecraft, отправьте данный код в ЛС боту"));
 
         player.networkHandler.disconnect(reason);
     }
@@ -62,7 +62,7 @@ public class Discord4Fabric implements ModInitializer {
                 ModCommands.init();
             }
         } catch (LoginException e) {
-            LOGGER.error("Вход в систему невозможен! Пожалуйста, обновите конфигурацию и перезапустите сервер");
+            LOGGER.error("Не удалось соединиться с ботом! Пожалуйста, обновите конфигурацию и перезапустите сервер");
         } catch (Exception e) {
             Utils.logException(e);
         }
@@ -74,7 +74,7 @@ public class Discord4Fabric implements ModInitializer {
             CONFIG.writeConfig(file);
             LOGGER.error(
                     String.format(
-                            "Конфигурация не найдена! Generated template at %s",
+                            "Конфигурация не найдена! Шаблон сгенерирован на %s",
                             file.getAbsolutePath()
                     )
             );
@@ -124,7 +124,7 @@ public class Discord4Fabric implements ModInitializer {
                         fileWriter.write("{}");
                     }
                 }
-                LOGGER.warn("No events file! Generated template");
+                LOGGER.warn("Не найден файл события! Шаблон сгенерирован");
             }
         } catch (IOException e) {
             Utils.logException(e);
