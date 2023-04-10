@@ -1,21 +1,21 @@
 ## Getting started
-Make sure you have [Fabric Loader](https://fabricmc.net/) and [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api) installed.
+Убедитесь, что у вас есть [Fabric Loader](https://fabricmc.net/) и установлен [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api).
 
-Drop the mod jar into your mods folder on your server (Can be found on [Modrinth](https://modrinth.com/mod/discord4fabric) and [CurseForge](https://www.curseforge.com/minecraft/mc-mods/discord4fabric)).
+Перетащите мод в папку mods вашего сервера (Его можно найти на [Modrinth](https://modrinth.com/mod/discord4fabricru)).
 
-Launch the server, wait for it to load, then stop the server.
+Запустите сервер, подождите пока он загрузится, а потом выключите сервер.
 
-A file named `discord4fabric.json` should now appear in your `config` folder inside your main server folder.
+Теперь файл с именем `discord4fabric.json` должен появится в папке `config`
 
-Change `token` to your bot token. More information [here](https://discord.com/developers/docs/topics/oauth2#bots).
+Измените `token` на токен вашего бота . Больше информации [здесь](https://discord.com/developers/docs/topics/oauth2#bots).
 
-Change `webhook` to your webhook URL (Optional). More information [here](https://discord.com/developers/docs/resources/webhook#create-webhook).
+Измените `webhook` на URL вашего вебхука (не обязательно). Больше информации [здесь](https://discord.com/developers/docs/resources/webhook#create-webhook).
 
-Change `guild_id` to your server ID.
+Измените `guild_id` на айди вашего сервера Discord.
 
-Change `channel_id` to your text channel ID (where you want users to interact with the bot).
+Измените `channel_id` на айди вашего текстового канала (где вы хотите получать сообщения от бота).
 
-Note: This mod requires the `GUILD_MEMBERS` intent. Please make sure you have it enabled.
+Примечание: Этот мод требует `GUILD_MEMBERS` в настройках бота. Пожалуйста, убедитесь что он включен.
 
 ## Commands
 (Require permission level 4/OP) `/discord4fabric reload`: Reload config from disk (will generate config if config file doesn't exist).
