@@ -19,7 +19,7 @@ public final class DiscordCommandProcessor {
 
     private static final Map<String, DiscordCommandHandler> commandHandlers = Map.of(
             "ping", server -> Discord4Fabric.DISCORD.sendPlainMessage("Pong! :ping_pong:"),
-            "tps", server -> Discord4Fabric.DISCORD.sendPlainMessage("Server TPS: " + Utils.getTpsAsString()),
+            "tps", server -> Discord4Fabric.DISCORD.sendPlainMessage("TPS Сервера: " + Utils.getTpsAsString()),
             "playerlist", server -> {
                 int maxPlayers = server.getMaxPlayerCount();
                 String[] playerNames = server.getPlayerNames();
@@ -29,7 +29,7 @@ public final class DiscordCommandProcessor {
                         .append(playerNames.length)
                         .append("/")
                         .append(maxPlayers)
-                        .append(" players currently online:\n");
+                        .append(" Игроков онлайн:\n");
 
                 int playersToShow = Math.min(playerNames.length, 5);
                 for (int i = 0; i < playersToShow; i++) {
@@ -39,9 +39,9 @@ public final class DiscordCommandProcessor {
                 }
                 if (playerNames.length > playersToShow) {
                     stringBuilder
-                            .append(" *and ")
+                            .append(" *и ")
                             .append(playerNames.length - playersToShow)
-                            .append(" more*");
+                            .append(" более*");
                 }
                 Discord4Fabric.DISCORD.sendPlainMessage(stringBuilder.toString());
             }
