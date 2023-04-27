@@ -45,7 +45,7 @@ public class Discord4Fabric implements ModInitializer {
                         .append(Text.literal("Чтобы зайти на сервер, вам нужно привязать аккаунт Discord к аккаунту Minecraft!\n"))
                         .append(Text.literal("Ваш код привязки: "))
                         .append(Text.literal(code)
-                                .formatted(Formatting.RED, Formatting.UNDERLINE))
+                                .formatted(Formatting.GREEN, Formatting.UNDERLINE))
                         .append(Text.literal("\nДля привязки аккаунта Discord к аккаунту Minecraft, отправьте данный код в ЛС боту"));
 
         player.networkHandler.disconnect(reason);
