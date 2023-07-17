@@ -4,7 +4,7 @@ public class GuildException extends Exception {
     private final String message;
 
     public GuildException(Long id) {
-        message = "Couldn't find guild with id '" + id + "'!";
+        message = "Не удалось найти сервер с id '" + id + "'!";
     }
 
     @Override
