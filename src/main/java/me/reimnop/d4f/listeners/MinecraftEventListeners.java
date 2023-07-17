@@ -151,13 +151,13 @@ public final class MinecraftEventListeners {
                 AccountLinking.LinkingResult result = accountLinking.tryLinkAccount(code, user.getIdLong());
                 switch (result) {
                     case INVALID_CODE -> channel
-                            .sendMessage(MessageCreateData.fromContent("Invalid linking code!"))
+                            .sendMessage(MessageCreateData.fromContent("Неверный код!"))
                             .queue();
                     case ACCOUNT_LINKED -> channel
-                            .sendMessage(MessageCreateData.fromContent("Your account was already linked!"))
+                            .sendMessage(MessageCreateData.fromContent("Ваш аккаунт Discord уже связан с другой учетной записью Minecraft!"))
                             .queue();
                     case SUCCESS -> channel
-                            .sendMessage(MessageCreateData.fromContent("Your account was successfully linked!"))
+                            .sendMessage(MessageCreateData.fromContent("Вы успешно привязали свой аккаунт Discord к Minecraft!"))
                             .queue();
                 }
                 return;
