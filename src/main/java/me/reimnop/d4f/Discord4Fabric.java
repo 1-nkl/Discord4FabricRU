@@ -42,11 +42,11 @@ public class Discord4Fabric implements ModInitializer {
         String code = ACCOUNT_LINKING.getCode(uuid);
 
         MutableText reason = Text.empty()
-                        .append(Text.literal("This server requires a linked Discord account!\n"))
-                        .append(Text.literal("Your linking code is "))
+                        .append(Text.literal("Чтобы зайти на сервер, вам нужно привязать аккаунт Discord к аккаунту Minecraft!\n"))
+                        .append(Text.literal("Ваш код привязки: "))
                         .append(Text.literal(code)
-                                .formatted(Formatting.BLUE, Formatting.UNDERLINE))
-                        .append(Text.literal("\nPlease DM the bot this linking code to link your account"));
+                                .formatted(Formatting.RED, Formatting.UNDERLINE))
+                        .append(Text.literal("\nДля привязки аккаунта Discord к аккаунту Minecraft, отправьте данный код в ЛС боту"));
 
         player.networkHandler.disconnect(reason);
     }
@@ -62,7 +62,7 @@ public class Discord4Fabric implements ModInitializer {
                 ModCommands.init();
             }
         } catch (LoginException e) {
-            LOGGER.error("Login Failed! Please update your config and restart the server");
+            LOGGER.error("Не удалось соединиться с ботом! Пожалуйста, обновите конфигурацию и перезапустите сервер");
         } catch (Exception e) {
             Utils.logException(e);
         }
@@ -74,11 +74,11 @@ public class Discord4Fabric implements ModInitializer {
             CONFIG.writeConfig(file);
             LOGGER.error(
                     String.format(
-                            "Config not found! Generated template at %s",
+                            "Файл конфигурации не найден! Новый файл сгенерирован по пути: %s",
                             file.getAbsolutePath()
                     )
             );
-            LOGGER.error("Please update your config and restart the server");
+            LOGGER.error("Пожалуйста, обновите конфигурацию и перезапустите сервер");
             return false;
         }
 
@@ -124,7 +124,7 @@ public class Discord4Fabric implements ModInitializer {
                         fileWriter.write("{}");
                     }
                 }
-                LOGGER.warn("No events file! Generated template");
+                LOGGER.warn("Не найден файл событий! Новый файл сгенерирован");
             }
         } catch (IOException e) {
             Utils.logException(e);
