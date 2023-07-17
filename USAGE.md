@@ -1,116 +1,116 @@
-## Getting started
-Make sure you have [Fabric Loader](https://fabricmc.net/) and [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api) installed.
+## Начало
+Убедитесь, что у вас есть [Fabric Loader](https://fabricmc.net/) и установлен [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api).
 
-Drop the mod jar into your mods folder on your server (Can be found on [Modrinth](https://modrinth.com/mod/discord4fabric) and [CurseForge](https://www.curseforge.com/minecraft/mc-mods/discord4fabric)).
+Перетащите мод в папку mods вашего сервера (Его можно найти на [Modrinth](https://modrinth.com/mod/discord4fabricru)).
 
-Launch the server, wait for it to load, then stop the server.
+Запустите сервер, подождите пока он загрузится, а потом выключите сервер.
 
-A file named `discord4fabric.json` should now appear in your `config` folder inside your main server folder.
+Теперь файл с именем `discord4fabric.json` должен появится в папке `config`
 
-Change `token` to your bot token. More information [here](https://discord.com/developers/docs/topics/oauth2#bots).
+Измените `token` на токен вашего бота . Больше информации [здесь](https://discord.com/developers/docs/topics/oauth2#bots).
 
-Change `webhook` to your webhook URL (Optional). More information [here](https://discord.com/developers/docs/resources/webhook#create-webhook).
+Измените `webhook` на URL вашего вебхука (не обязательно). Больше информации [здесь](https://discord.com/developers/docs/resources/webhook#create-webhook).
 
-Change `guild_id` to your server ID.
+Измените `guild_id` на айди вашего сервера Discord.
 
-Change `channel_id` to your text channel ID (where you want users to interact with the bot).
+Измените `channel_id` на айди вашего текстового канала (где вы хотите получать сообщения от бота).
 
-Note: This mod requires the `GUILD_MEMBERS` intent. Please make sure you have it enabled.
+Примечание: Этот мод требует `GUILD_MEMBERS` в настройках бота. Пожалуйста, убедитесь что он включен.
 
-## Commands
-(Require permission level 4/OP) `/discord4fabric reload`: Reload config from disk (will generate config if config file doesn't exist).
+## Команды
+(Требуется 4 уровень разрешения или OP) `/discord4fabric reload`: Перезагрузить файл конфигурации с диска (Сгенерирует новый файл, если он отсутсвует).
 
-(Require permission level 4/OP) `/discord4fabric update`: Update config to latest version.
+(Требуется 4 уровень разрешения или OP) `/discord4fabric update`: Обновление конфигурации до последней версии.
 
-`/discord4fabric link`: Link account.
+`/discord4fabric link`: Привязка аккаунта.
 
-`/discord4fabric unlink`: Unlink an already linked account.
+`/discord4fabric unlink`: Отвязать связанный аккаунт.
 
-## Placeholders
-Placeholders are a way to insert variables into customizable text messages
+## Заполнители
+Заполнители - это способ вставки переменных в настраиваемые текстовые сообщения
 
-Syntax: `%category:name%`
+Синтаксис: `%category:name%`
 
-## Player join/leave
-`%d4f:post_online%`: The amount of players online after the player has joined/left. Example: `42`
+## Игрок присоединился/отключился
+`%d4f:post_online%`: Количество игроков онлайн после того, как игрок присоединился/отключился. Пример: `42`
 
-See here: https://placeholders.pb4.eu/user/default-placeholders/#player
+Смотрите здесь: https://placeholders.pb4.eu/user/default-placeholders/#player
 
-## Player death
-`%d4f:reason%`: Death reason with player name. Example: `Steve fell from a high place`
+## Смерть игрока
+`%d4f:reason%`: Прчина смерти игрока. Пример: `Steve fell from a high place`
 
-For more info: https://placeholders.pb4.eu/user/default-placeholders/#player
+Для получения дополнительной информации: https://placeholders.pb4.eu/user/default-placeholders/#player
 
-## Advancement
-`%d4f:title%`: Advancement name. Example: `Serious Dedication`
+## Достижения
+`%d4f:title%`: Название достижения. Пример: `Serious Dedication`
 
-`%d4f:description%`: Advancement description. Example: `Use a Netherite Ingot to upgrade a Hoe, and then reevaluate your life choices`
+`%d4f:description%`: Описание достижения. Пример: `Use a Netherite Ingot to upgrade a Hoe, and then reevaluate your life choices`
 
-For more info: https://placeholders.pb4.eu/user/default-placeholders/#player
+Для получения дополнительной информации: https://placeholders.pb4.eu/user/default-placeholders/#player
 
-## Discord to Minecraft messages
-`%d4f:fullname%`: Full name of user. Example: `Reimnop#3147`
+## Сообщения из Discord в Minecraft
+`%d4f:fullname%`: Полное имя пользователя. Пример: `Reimnop#3147`
 
-`%d4f:nickname%`: Nickname of user. Example: `Reimnop`
+`%d4f:nickname%`: Ник пользователя. Пример: `Reimnop`
 
-`%d4f:discriminator%`: The 4-digit tag of the user. Example: `3147`
+`%d4f:discriminator%`: Тег пользователя. Пример: `3147`
 
-`%d4f:message%`: The message that the user sent. Example: `Why did you take the worm from the soup sock?`
+`%d4f:message%`: Сообщение, отправленное пользователем. Пример: `Why did you take the worm from the soup sock?`
 
-### With reply
-`%d4f:reply_fullname%`: Full name of user being replied to. Example: `Reimnop#3147`
+### Ответ на сообщение
+`%d4f:reply_fullname%`: Полное имя пользователя, которому отвечают. Example: `Reimnop#3147`
 
-`%d4f:reply_nickname%`: Nickname of user being replied to. Example: `Reimnop`
+`%d4f:reply_nickname%`: Ник пользователя, которому отвечают. Пример: `Reimnop`
 
-`%d4f:reply_discriminator%`: The 4-digit tag of the user being replied to. Example: `3147`
+`%d4f:reply_discriminator%`: Тег пользователя, которому отвечают. Пример: `3147`
 
-### Credits
+### Кредиты
 ![Image](https://cdn.discordapp.com/attachments/959467102962610177/983032671229870100/unknown.png)
 
-For more info: https://placeholders.pb4.eu/user/default-placeholders/#server
+Для получения дополнительной информации: https://placeholders.pb4.eu/user/default-placeholders/#server
 
-## Minecraft to Discord messages
-`%d4f:message%`: The player's message. Example: `MS-DOS wasnt actually coded my Microsoft, but was actually bought`<sub>yes I know there's a typo</sub>
+## Сообщения из Minecraft в Discord
+`%d4f:message%`: Сообщение игрока. Пример: `MS-DOS wasnt actually coded my Microsoft, but was actually bought` <sub>да, я знаю что это опечатка</sub>
 
-### If there's no webhook
-### Webhook to plain messages
-`d4f:message`: The message after being processed by former config option.
+### Если нет вебхука
+### Вебхук для обычных сообщений
+`d4f:message`: Сообщение после обработки предыдущей опцией конфига.
 
-`d4f:name`: The name after being processed by former config option.
+`d4f:name`: Имя после обработки предыдущей опцией конфига.
 
-For more info: https://placeholders.pb4.eu/user/default-placeholders/#player
+Для получения дополнительной информации: https://placeholders.pb4.eu/user/default-placeholders/#player
 
-### Credits
+### Кредиты
 ![Image](https://cdn.discordapp.com/attachments/959467102962610177/983033944733777920/unknown.png)
 
-For more info: https://placeholders.pb4.eu/user/default-placeholders/#player
+Для получения дополнительной информации: https://placeholders.pb4.eu/user/default-placeholders/#player
 
-## Discord name
-See here: https://placeholders.pb4.eu/user/default-placeholders/#player
+## Имя Discord
+Смотрите здесь: https://placeholders.pb4.eu/user/default-placeholders/#player
 
-## Discord ping
-`%d4f:fullname%`: Full name of user. Example: `Reimnop#3147`
+## Discord пинг
+`%d4f:fullname%`: Полное имя пользователя. Пример: `Reimnop#3147`
 
-`%d4f:nickname%`: Nickname of user. Example: `Reimnop`
+`%d4f:nickname%`: Ник пользователя. Пример: `Reimnop`
 
-`%d4f:discriminator%`: The 4-digit tag of the user. Example: `3147`
+`%d4f:discriminator%`: Тег пользователя. Пример: `3147`
 
-## Status
-See here: https://placeholders.pb4.eu/user/default-placeholders/#server
+## Статус бота
+Смотрите здесь: https://placeholders.pb4.eu/user/default-placeholders/#server
 
-## Topic
-See here: https://placeholders.pb4.eu/user/default-placeholders/#server
+## Тема канала
+Смотрите здесь: https://placeholders.pb4.eu/user/default-placeholders/#server
 
-### Note
-Channel topic update rate limit is absurdly high, please try not to set topic update interval to below 6000
+### Примечание
+Предел скорости обновления темы канала слишком высок, поэтому лучше не выставлять интервал обновления темы ниже 6000
 
-Setting either status or topic update interval to -1 disables it
+Установка интервала обновления темы на -1 отключает её.
 
-## Avatar services
-Change your avatar services to use something other than Crafatar/MCHeads with something else by changing the `avatar_url` and `avatar_url_texture_hash` config options
+## Сервисы аватаров
+Чтобы использовать не Crafatar/MCHeads, а что-то другое, измените параметры конфигурации `avatar_url` и `avatar_url_texture_hash`
 
-- %s in `avatar_url` config will get replaced by the player's UUID
-- %s in `avatar_url_texture_hash` config will get replaced by the player's skin hash (only used for [FabricTailor](https://www.curseforge.com/minecraft/mc-mods/fabrictailor) compatibility)
+- `avatar_url` будет заменён на UUID игрока.
+- `avatar_url_texture_hash` будет заменен хэшем скина игрока (only used for [FabricTailor](https://www.curseforge.com/minecraft/mc-mods/fabrictailor) compatibility)
 
-## Custom events
-Custom events is an extremely flexible and extensible feature of this mod. It allows for custom behavior defined in JSON (sending a message when a player join, run commands when someone gets an advancement, etc). However it is quite complicated and hard to understand. You can find more information about it [here](CUSTOM_EVENTS.md)
+## Пользовательские события
+Пользовательские события - это чрезвычайно гибкая и расширяемая функция данного мода. Она позволяет создавать пользовательское поведение, определенное в JSON (отправка сообщения, когда игрок присоединяется, выполнение команд, когда кто-то получает повышение и т.д.). Однако это довольно сложно и трудно для понимания. Вы можете найти больше информации об этом [здесь](CUSTOM_EVENTS.md)
