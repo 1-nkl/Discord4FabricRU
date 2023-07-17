@@ -4,7 +4,7 @@ public class SyntaxException extends Exception {
     private final String message;
 
     public SyntaxException(int index) {
-        message = "Invalid constraint syntax at " + index + "!";
+        message = "Недопустимый синтаксис ограничений в " + index + "!";
     }
 
     @Override
